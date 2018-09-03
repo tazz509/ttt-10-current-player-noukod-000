@@ -1,10 +1,13 @@
 def turn_count(board)
   counter = 0
-  if board == "X"
-    counter +=1
-    end
+
+  board.each do |choix|
+    counter_taken += choix == "X" || choix == "O"? 1 : 0
+  end
+ return counter
 end
 
-def current_player(board)
 
+def current_player(board)
+  player = turn_count(board)%2 == 0? "X" : "O"
 end
